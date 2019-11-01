@@ -80,11 +80,10 @@ public class LevelGenerator : MonoBehaviour
         lastTransform = lastLevelPartTransform;
     }
 
-    public void SpawnLevelPart()
+    public void SpawnLevelPart()//gets random part and puts at last parts end position
     {
         Transform randomLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
         Transform lastLevelPartTransform = SpawnLevelPart(randomLevelPart, lastTransform.Find("EndPosition").position);
-       // lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
         lastTransform = lastLevelPartTransform;
     }
     Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)

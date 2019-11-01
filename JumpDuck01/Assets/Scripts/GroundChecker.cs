@@ -48,11 +48,13 @@ public class GroundChecker : MonoBehaviour
             Debug.Log("win");
             GameManager.instance.currentLevel++;
             GameManager.instance.state = GameManager.eState.WIN;
+            GameManager.instance.scoreManager.SaveScore();
         }
         if (other.gameObject.CompareTag("WinGate") && SceneManager.GetActiveScene().name == "PlayScene3")
         {
             Debug.Log("win");
             GameManager.instance.state = GameManager.eState.WIN;
+            GameManager.instance.scoreManager.SaveScore();
         }
 
     }
